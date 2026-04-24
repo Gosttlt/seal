@@ -719,6 +719,93 @@ const ScrollToTop = () => {
     </AnimatePresence>
   )
 }
+const prices = [
+  {
+    category: 'Терапия',
+    items: [
+      {name: 'Консультация врача', price: 'Бесплатно'},
+      {name: 'Лечение кариеса', price: 'от 4 500 ₽'},
+      {name: 'Профессиональная гигиена', price: '6 000 ₽'},
+    ],
+  },
+  {
+    category: 'Эстетика',
+    items: [
+      {name: 'Отбеливание ZOOM 4', price: '25 000 ₽'},
+      {name: 'Керамический винир', price: 'от 45 000 ₽'},
+      {name: 'Реставрация зуба', price: 'от 8 000 ₽'},
+    ],
+  },
+  {
+    category: 'Имплантация',
+    items: [
+      {name: 'Установка импланта', price: 'от 35 000 ₽'},
+      {name: 'Синус-лифтинг', price: 'от 20 000 ₽'},
+      {name: 'Коронка на имплант', price: 'от 30 000 ₽'},
+    ],
+  },
+]
+
+const PriceSection = () => {
+  return (
+    <section className='py-28 bg-gray-50' id='прайс'>
+      <div className='container mx-auto px-6'>
+        <motion.div
+          initial={{opacity: 0, y: 50}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          className='text-center mb-20'
+        >
+          <span className='text-red-500 text-sm tracking-wider uppercase'>
+            Стоимость
+          </span>
+          <h2 className='text-4xl md:text-5xl font-light mt-2'>
+            Прозрачный прайс-лист
+          </h2>
+          <div className='w-20 h-1 bg-red-500 mx-auto mt-6' />
+        </motion.div>
+
+        <div className='grid lg:grid-cols-3 gap-12'>
+          {prices.map((section, idx) => (
+            <motion.div
+              key={idx}
+              initial={{opacity: 0, x: -20}}
+              whileInView={{opacity: 1, x: 0}}
+              viewport={{once: true}}
+              transition={{delay: idx * 0.1}}
+              className='bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow'
+            >
+              <h3 className='text-2xl font-bold mb-8 flex items-center gap-3'>
+                <div className='w-2 h-8 bg-red-600 rounded-full' />
+                {section.category}
+              </h3>
+              <div className='space-y-6'>
+                {section.items.map((item, i) => (
+                  <div
+                    key={i}
+                    className='flex justify-between items-end border-b border-gray-100 pb-2 group'
+                  >
+                    <span className='text-gray-600 group-hover:text-black transition-colors'>
+                      {item.name}
+                    </span>
+                    <span className='font-bold text-lg whitespace-nowrap'>
+                      {item.price}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className='text-center text-gray-400 mt-12 text-sm italic'>
+          * Конечная стоимость определяется после осмотра и составления плана
+          лечения
+        </p>
+      </div>
+    </section>
+  )
+}
 
 // Main Page
 export default function Home() {
@@ -729,6 +816,7 @@ export default function Home() {
       <Benefits />
       <Works />
       <Process />
+      <PriceSection />
       <Testimonials />
       <Contact />
       <LazyMap />
