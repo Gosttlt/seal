@@ -16,11 +16,11 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install
-      - name: Build and export
-        run: npm run build && npm run export
+      - name: Build
+        run: npm run build
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: out
+          folder: .next/standalone # Или out, в зависимости от версии Next.js

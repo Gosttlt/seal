@@ -1,10 +1,10 @@
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  output: 'export', // Статический экспорт
-  basePath: isProd ? '/seal' : '', // Имя вашего репозитория
+  output: 'export', // Включает статический экспорт
+  basePath: isProd ? '/seal' : '', // Замените 'seal' на имя вашего репозитория
   assetPrefix: isProd ? '/seal/' : '', // То же имя
   images: {
-    unoptimized: true, // Отключаем оптимизацию для статического экспорта
+    unoptimized: true, // Отключает оптимизацию изображений для статического экспорта
   },
 }
