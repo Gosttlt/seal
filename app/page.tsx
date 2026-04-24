@@ -127,7 +127,7 @@ const Hero = () => {
       <div
         className='absolute inset-0 bg-cover bg-center scale-110'
         style={{
-          backgroundImage: "url('/header.jpg')",
+          backgroundImage: "url('header.jpg')",
           transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
         }}
       />
