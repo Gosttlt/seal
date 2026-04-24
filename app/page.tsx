@@ -549,7 +549,7 @@ const Contact = () => {
 
             <div className='mt-12 m-auto'>
               <img
-                src='/me1.jpg'
+                src='me1.jpg'
                 alt='Директор клиники'
                 className='w-32 h-32 rounded-full object-cover border-4 border-red-300 shadow-lg'
               />
