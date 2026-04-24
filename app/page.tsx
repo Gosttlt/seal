@@ -10,7 +10,6 @@ import {
   MapPin,
   Phone,
   Clock,
-  Instagram,
   ExternalLink,
   Menu,
   X,
