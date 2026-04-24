@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === 'production'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = {
+  output: 'export', // Статический экспорт
+  basePath: isProd ? '/seal' : '', // Имя вашего репозитория
+  assetPrefix: isProd ? '/seal/' : '', // То же имя
+  images: {
+    unoptimized: true, // Отключаем оптимизацию для статического экспорта
+  },
+}
