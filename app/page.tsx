@@ -85,7 +85,7 @@ const Hero = () => {
     <section className='relative h-screen flex items-center justify-center overflow-hidden bg-black'>
       <motion.div style={{y}} className='absolute inset-0 z-0 opacity-60'>
         <Image
-          src='header.jpg'
+          src='header11111.webp'
           alt='Dentistry'
           fill
           className='object-cover'
@@ -101,7 +101,7 @@ const Hero = () => {
           </span>
           <h1 className='text-5xl md:text-8xl font-light text-white mb-8 tracking-tighter'>
             Искусство вашей <br />{' '}
-            <span className='italic'>идеальной улыбки</span>
+            <span className='italic '>идеальной улыбки</span>
           </h1>
           <motion.button
             whileHover={{scale: 1.05}}
@@ -167,7 +167,23 @@ const Benefits = () => (
     </div>
   </section>
 )
-
+const projects = [
+  {
+    before: 'header.jpg',
+    after: 'header.jpg',
+    title: 'Эстетическая реставрация',
+  },
+  {
+    before: 'before2.jpg',
+    after: 'header22.webp',
+    title: 'Имплантация с немедленной нагрузкой',
+  },
+  {
+    before: 'before3.jpg',
+    after: 'header222.webp',
+    title: 'Виниры - голливудская улыбка',
+  },
+]
 // --- 4. Works (Галерея) ---
 const Works = () => (
   <section id='Работы' className='py-32 bg-zinc-50'>
@@ -179,16 +195,21 @@ const Works = () => (
         </p>
       </div>
       <div className='grid md:grid-cols-3 gap-8'>
-        {[1, 2, 3].map(item => (
+        {projects.map(item => (
           <motion.div
-            key={item}
+            key={item.title}
             whileHover={{y: -10}}
             className='bg-white p-4 group cursor-pointer shadow-sm'
           >
             <div className='relative aspect-square overflow-hidden mb-6'>
               <div className='absolute inset-0 bg-emerald-900/20 opacity-0 group-hover:opacity-100 transition-opacity z-10' />
               <div className='w-full h-full bg-zinc-200' />{' '}
-              {/* Заглушка для фото работ */}
+              <Image
+                src={item.after}
+                alt='Dr. Borisov'
+                fill
+                className='w-full h-32 bg-gray-300 rounded-lg mb-4  object-cover'
+              />
             </div>
             <h3 className='text-xl font-light mb-2'>Виниры из E-max</h3>
             <p className='text-zinc-400 text-sm italic'>Срок работы: 14 дней</p>

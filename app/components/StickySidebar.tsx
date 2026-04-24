@@ -8,9 +8,10 @@ const StickySidebar = () => {
   const prefix = isProd ? '/seal' : ''
 
   const sites = [
-    {name: 'Lending 1', href: '/', color: 'bg-red-600'},
-    {name: 'Lending 2', href: '/lending2', color: 'bg-black'},
-    {name: 'Lending 3', href: '/lending3', color: 'bg-gray-600'},
+    {name: 'Lending 1', href: '/', color: 'bg-green-600'},
+    {name: 'Lending 2', href: '/lending2', color: 'bg-blue-600'},
+    {name: 'Lending 3', href: '/lending3', color: 'bg-red-600'},
+    {name: 'Lending 4', href: '/lending4', color: 'bg-green-600'},
   ]
 
   return (

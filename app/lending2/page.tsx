@@ -23,7 +23,24 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import LazyMap from '../components/Map'
-
+import Image from 'next/image'
+const projects = [
+  {
+    before: 'header.jpg',
+    after: 'header.jpg',
+    title: 'Эстетическая реставрация',
+  },
+  {
+    before: 'before2.jpg',
+    after: 'header22.webp',
+    title: 'Имплантация с немедленной нагрузкой',
+  },
+  {
+    before: 'before3.jpg',
+    after: 'header222.webp',
+    title: 'Виниры - голливудская улыбка',
+  },
+]
 // Компонент модального окна
 const Modal = ({
   isOpen,
@@ -317,8 +334,8 @@ export default function Home() {
               transition={{repeat: Infinity, duration: 3, repeatDelay: 2}}
               className='inline-block mb-6'
             >
-              <span className='text-blue-400 text-sm tracking-[0.3em] uppercase font-light border border-blue-400/30 px-4 py-1 rounded-full'>
-                Стоматология премиум-класса
+              <span className='Стоматология премиум-класса text-white text-sm tracking-[0.3em] uppercase font-light border border-white/30 px-4 py-1 rounded-full'>
+                Стоматология
               </span>
             </motion.div>
             <h1 className='text-6xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white drop-shadow-2xl'>
@@ -454,19 +471,22 @@ export default function Home() {
           </h2>
         </motion.div>
         <div className='grid md:grid-cols-3 gap-6'>
-          {[1, 2, 3].map(i => (
+          {projects.map(i => (
             <motion.div
-              key={i}
+              key={i.title}
               whileHover={{scale: 1.03, rotateX: 5}}
               className='group aspect-[4/5] bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-lg cursor-pointer relative'
             >
               <div className='absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center'>
-                <span className='text-white opacity-0 group-hover:opacity-100 transition-all duration-500 text-sm tracking-wide'>
-                  Смотреть кейс →
-                </span>
+                <Image
+                  src={i.after}
+                  alt='Dr. Borisov'
+                  fill
+                  className='w-full h-32 bg-gray-300 rounded-lg mb-4  object-cover'
+                />
               </div>
               <div className='w-full h-full flex items-center justify-center text-gray-500 text-sm'>
-                Кейс #{i}
+                Кейс #{i.title}
               </div>
             </motion.div>
           ))}

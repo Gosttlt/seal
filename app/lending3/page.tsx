@@ -25,6 +25,7 @@ import {
   FileText,
 } from 'lucide-react'
 import LazyMap from '../components/Map'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -126,7 +127,7 @@ const Hero = () => {
       <div
         className='absolute inset-0 bg-cover bg-center scale-110'
         style={{
-          backgroundImage: "url('header.jpg')",
+          backgroundImage: "url('header11111.webp')",
           transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
         }}
       />
@@ -253,18 +254,18 @@ const Benefits = () => {
 const Works = () => {
   const projects = [
     {
-      before: '/before1.jpg',
-      after: '/after1.jpg',
+      before: 'header.jpg',
+      after: 'header.jpg',
       title: 'Эстетическая реставрация',
     },
     {
-      before: '/before2.jpg',
-      after: '/after2.jpg',
+      before: 'before2.jpg',
+      after: 'header22.webp',
       title: 'Имплантация с немедленной нагрузкой',
     },
     {
-      before: '/before3.jpg',
-      after: '/after3.jpg',
+      before: 'before3.jpg',
+      after: 'header222.webp',
       title: 'Виниры - голливудская улыбка',
     },
   ]
@@ -300,7 +301,13 @@ const Works = () => {
               <div className='aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center'>
                 <div className='text-center p-6'>
                   <div className='text-sm text-gray-400 mb-2'>До/После</div>
-                  <div className='w-full h-32 bg-gray-300 rounded-lg mb-4 animate-pulse' />
+                  <div className='w-full h-32 bg-gray-300 rounded-lg mb-4 animate-pulse relative' />
+                  <Image
+                    src={project.after}
+                    alt='Dr. Borisov'
+                    fill
+                    className='w-full h-32 bg-gray-300 rounded-lg mb-4  object-cover'
+                  />
                   <p className='font-medium'>{project.title}</p>
                 </div>
               </div>
