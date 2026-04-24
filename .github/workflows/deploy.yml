@@ -23,4 +23,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: .next/standalone # Или out, в зависимости от версии Next.js
+          folder: out # Или out, в зависимости от версии Next.js
