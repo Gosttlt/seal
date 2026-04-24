@@ -301,7 +301,7 @@ export default function Home() {
         <motion.div style={{y: parallaxY}} className='absolute inset-0 z-0'>
           <div
             className='absolute inset-0 bg-cover bg-center scale-105'
-            style={{backgroundImage: "url('/header.jpg')"}}
+            style={{backgroundImage: "url('header.jpg')"}}
           />
           <div className='absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60' />
         </motion.div>
@@ -622,7 +622,7 @@ export default function Home() {
               className='rounded-2xl overflow-hidden shadow-2xl aspect-square bg-gray-800 flex items-center justify-center relative group'
             >
               <img
-                src='/me.jpg'
+                src='me.jpg'
                 alt='Борисов Борис Иванович'
                 className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
               />

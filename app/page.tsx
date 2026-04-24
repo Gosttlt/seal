@@ -85,7 +85,7 @@ const Hero = () => {
     <section className='relative h-screen flex items-center justify-center overflow-hidden bg-black'>
       <motion.div style={{y}} className='absolute inset-0 z-0 opacity-60'>
         <Image
-          src='/header.jpg'
+          src='header.jpg'
           alt='Dentistry'
           fill
           className='object-cover'
@@ -123,7 +123,7 @@ const Benefits = () => (
         <FadeIn>
           <div className='relative aspect-[4/5] overflow-hidden rounded-sm group'>
             <Image
-              src='/me.jpg'
+              src='me.jpg'
               alt='Dr. Borisov'
               fill
               className='object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100'
